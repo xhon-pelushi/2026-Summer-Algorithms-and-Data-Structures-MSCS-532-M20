@@ -15,6 +15,13 @@ assignment2/
 ├── chart_time.png
 ├── chart_memory.png
 └── chart_bar.png
+assignment3/
+├── README.md
+├── algorithms.py
+├── Pelushi_Assignment3_MSCS532.docx
+├── chart_qs_time.png
+├── chart_qs_bar.png
+└── chart_ht_metrics.png
 ```
 
 ## Assignments
@@ -23,3 +30,4 @@ assignment2/
 |--------|-------------|
 | `assignment1/` | Insertion Sort (decreasing order) |
 | `assignment2/` | Merge Sort & Quick Sort — divide-and-conquer analysis and benchmarks |
+| `assignment3/` | Randomized Quicksort & Hash Table with Chaining — efficiency and scalability analysis |
