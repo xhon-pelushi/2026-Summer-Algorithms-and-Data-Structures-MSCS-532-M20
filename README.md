@@ -22,6 +22,13 @@ assignment3/
 ├── chart_qs_time.png
 ├── chart_qs_bar.png
 └── chart_ht_metrics.png
+assignment4/
+├── README.md
+├── heap_algorithms.py
+├── Pelushi_Assignment4_MSCS532.docx
+├── chart_sort_time.png
+├── chart_sort_bar.png
+└── chart_pq_ops.png
 ```
 
 ## Assignments
@@ -31,3 +38,4 @@ assignment3/
 | `assignment1/` | Insertion Sort (decreasing order) |
 | `assignment2/` | Merge Sort & Quick Sort — divide-and-conquer analysis and benchmarks |
 | `assignment3/` | Randomized Quicksort & Hash Table with Chaining — efficiency and scalability analysis |
+| `assignment4/` | Heapsort & Priority Queue — implementation, analysis, and scheduler simulation |
