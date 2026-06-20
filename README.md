@@ -29,6 +29,13 @@ assignment4/
 ├── chart_sort_time.png
 ├── chart_sort_bar.png
 └── chart_pq_ops.png
+assignment5/
+├── README.md
+├── quicksort_algorithms.py
+├── Pelushi_Assignment5_MSCS532.docx
+├── chart_qs_time.png
+├── chart_qs_bar.png
+└── chart_qs_comparisons.png
 ```
 
 ## Assignments
@@ -39,3 +46,4 @@ assignment4/
 | `assignment2/` | Merge Sort & Quick Sort — divide-and-conquer analysis and benchmarks |
 | `assignment3/` | Randomized Quicksort & Hash Table with Chaining — efficiency and scalability analysis |
 | `assignment4/` | Heapsort & Priority Queue — implementation, analysis, and scheduler simulation |
+| `assignment5/` | Quicksort — deterministic vs. randomized pivot selection, complexity analysis, and empirical benchmarks |
