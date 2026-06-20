@@ -36,6 +36,17 @@ assignment5/
 ├── chart_qs_time.png
 ├── chart_qs_bar.png
 └── chart_qs_comparisons.png
+assignment6/
+├── README.md
+├── selection_algorithms.py
+├── data_structures.py
+├── Pelushi_Assignment6_MSCS532.docx
+├── chart_sel_time.png
+├── chart_sel_bar.png
+├── chart_sel_comparisons.png
+├── chart_ds_access.png
+├── chart_ds_insert.png
+└── chart_ds_queue.png
 ```
 
 ## Assignments
@@ -47,3 +58,4 @@ assignment5/
 | `assignment3/` | Randomized Quicksort & Hash Table with Chaining — efficiency and scalability analysis |
 | `assignment4/` | Heapsort & Priority Queue — implementation, analysis, and scheduler simulation |
 | `assignment5/` | Quicksort — deterministic vs. randomized pivot selection, complexity analysis, and empirical benchmarks |
+| `assignment6/` | Median-of-Medians & Randomized Quickselect, plus elementary data structures (arrays, stacks, queues, linked lists, rooted tree) — complexity analysis and empirical trade-offs |
