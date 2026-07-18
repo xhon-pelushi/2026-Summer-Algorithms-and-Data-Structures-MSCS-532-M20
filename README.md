@@ -47,6 +47,21 @@ assignment6/
 ├── chart_ds_access.png
 ├── chart_ds_insert.png
 └── chart_ds_queue.png
+assignment7/
+├── README.md
+└── Pelushi_Assignment7_MSCS532.docx
+project/
+├── README.md
+├── PORTAL_GUIDE.md
+├── ecommerce_system.py
+├── demo.py
+├── portal.py
+├── data_structures/        (six from-scratch structures, one module each)
+├── tests/                  (42 unit tests)
+├── benchmarks/             (dataset generator + timing suite + raw data)
+├── charts/                 (benchmark charts)
+├── screenshots/            (demo, tests, portal captures)
+└── deliverables/           (Deliverables 1-4: reports, presentation, script)
 ```
 
 ## Assignments
@@ -59,3 +74,5 @@ assignment6/
 | `assignment4/` | Heapsort & Priority Queue — implementation, analysis, and scheduler simulation |
 | `assignment5/` | Quicksort — deterministic vs. randomized pivot selection, complexity analysis, and empirical benchmarks |
 | `assignment6/` | Median-of-Medians & Randomized Quickselect, plus elementary data structures (arrays, stacks, queues, linked lists, rooted tree) — complexity analysis and empirical trade-offs |
+| `assignment7/` | Exploring Hash Tables and Their Practical Applications — hash function design, collision-resolution strategies, and real-world trade-offs (written discussion) |
+| `project/` | Course project — e-commerce order platform: six from-scratch data structures (hash table, trie, BST, graph, max-heap, FIFO queue) behind one facade, with a dependency-free web portal, 42 unit tests, benchmarks at 100k products, and all four deliverables |
