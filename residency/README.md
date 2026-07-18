@@ -21,8 +21,8 @@ stores only SKUs and resolves them through the catalog in O(1).
 
 A browser portal (`portal.py`, stdlib `http.server` — still zero dependencies)
 puts a live UI over the facade: every panel is labeled and color-coded by the
-data structure that answers it (see `PORTAL_GUIDE.md` for a panel-by-panel
-walkthrough with screenshots). It also exercises the returns workflow — `process_return()`
+data structure that answers it (see `screenshots/` for full-page captures and
+per-panel crops). It also exercises the returns workflow — `process_return()`
 restocks through the catalog and a "most returned" dashboard reuses the same
 max-heap as best sellers.
 

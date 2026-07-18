@@ -52,7 +52,6 @@ assignment7/
 └── Pelushi_Assignment7_MSCS532.docx
 residency/
 ├── README.md
-├── PORTAL_GUIDE.md
 ├── ecommerce_system.py
 ├── demo.py
 ├── portal.py
