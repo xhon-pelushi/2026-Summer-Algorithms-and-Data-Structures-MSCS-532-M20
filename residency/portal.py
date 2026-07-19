@@ -328,9 +328,32 @@ PAGE = """<!doctype html>
                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
   .dash-grid h3 { margin: 0 0 4px; font-size: 13px; }
   .dash-grid p.sub { margin: 0 0 6px; font-size: 11.5px; color: var(--ink-3); }
+  /* floating cart button: always-visible feedback for "Add to cart",
+     count badge in the queue's color, click scrolls to the cart panel */
+  #cart-fab {
+    position: fixed; top: 14px; right: 18px; z-index: 50;
+    font-size: 20px; line-height: 1; padding: 9px 13px;
+    border-radius: 999px; border: 1px solid var(--border);
+    background: var(--panel); cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .10);
+  }
+  #cart-count {
+    position: absolute; top: -7px; right: -7px; min-width: 21px;
+    height: 21px; border-radius: 11px; padding: 0 5px;
+    background: #0e8a61; color: #fff; font-size: 12.5px;
+    font-weight: 700; line-height: 21px; text-align: center;
+    display: none;
+  }
+  #cart-count.show { display: block; }
+  #cart-fab.bump { animation: bump .3s ease; }
+  @keyframes bump { 30% { transform: scale(1.22); } }
 </style>
 </head>
 <body>
+<button id="cart-fab" title="Cart — jump to Cart &amp; fulfilment">
+  &#128722;<span id="cart-count">0</span>
+</button>
+
 <header>
   <h1>Order Platform Portal</h1>
   <p>MSCS-532 course project &mdash; six from-scratch data structures behind one storefront.
@@ -514,7 +537,10 @@ async function refreshCatalog() {
       <td class="num">${p.stock}${stockBadge}</td>
       <td class="num">${p.sales}</td><td class="num">${p.returns}</td>
       <td style="white-space:nowrap">
-        <button data-cart="${p.sku}">Add to cart</button>
+        <button data-cart="${p.sku}" ${p.stock ? "" : "disabled"}
+          title="${p.stock ? `${p.stock} in stock`
+                           : "out of stock — restock or process a return"}"
+          >Add to cart</button>
         <button data-rec="${p.sku}">Also bought</button>
         <button data-ret="${p.sku}" ${p.sales > p.returns ? "" : "disabled"}
           title="${p.sales > p.returns
@@ -541,6 +567,9 @@ function refreshCart() {
     ul.appendChild(li);
   }
   $("place").disabled = !cart.length;
+  const badge = $("cart-count");
+  badge.textContent = cart.length;
+  badge.classList.toggle("show", cart.length > 0);
 }
 
 // one call after every mutation keeps every panel consistent with the
@@ -570,6 +599,10 @@ document.addEventListener("click", async e => {
     if (b.dataset.cart) {
       cart.push(b.dataset.cart);
       refreshCart();
+      const fab = $("cart-fab");        // visible feedback up top
+      fab.classList.remove("bump");
+      void fab.offsetWidth;             // restart the animation
+      fab.classList.add("bump");
     } else if (b.dataset.rec) {
       const d = await api("/api/recommend?sku=" + b.dataset.rec);
       $("recs").innerHTML = `<p class="hint">bought with
@@ -587,6 +620,10 @@ document.addEventListener("click", async e => {
 });
 
 $("clear-cart").addEventListener("click", () => { cart = []; refreshCart(); });
+
+$("cart-fab").addEventListener("click", () =>
+  document.querySelector(".p-queue")
+          .scrollIntoView({behavior: "smooth", block: "center"}));
 
 $("place").addEventListener("click", async () => {
   try {
@@ -611,8 +648,12 @@ refreshAll();
 refreshCart();
 
 // deep links for demos: ?q=... pre-runs a search, ?rec=SKU-... opens
-// the recommendation panel for that product
+// the recommendation panel, ?cart=SKU-...,SKU-... prefills the cart
 const params = new URLSearchParams(location.search);
+if (params.get("cart")) {
+  cart = params.get("cart").split(",").filter(Boolean);
+  refreshCart();
+}
 if (params.get("q")) {
   $("search-box").value = params.get("q");
   $("search-box").dispatchEvent(new Event("input"));
