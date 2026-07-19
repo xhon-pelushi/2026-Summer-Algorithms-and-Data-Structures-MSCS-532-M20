@@ -60,8 +60,8 @@ residency/
 ├── benchmarks/             (dataset generator + timing suite + raw data)
 ├── charts/                 (benchmark charts)
 ├── screenshots/            (demo, tests, portal captures)
-└── deliverables/           (Deliverables 1-3: design, proof of concept,
-                             optimization reports)
+└── deliverables/           (Deliverables 1-4: design, proof of concept,
+                             optimization, final report + presentation)
 ```
 
 ## Assignments
@@ -75,4 +75,4 @@ residency/
 | `assignment5/` | Quicksort — deterministic vs. randomized pivot selection, complexity analysis, and empirical benchmarks |
 | `assignment6/` | Median-of-Medians & Randomized Quickselect, plus elementary data structures (arrays, stacks, queues, linked lists, rooted tree) — complexity analysis and empirical trade-offs |
 | `assignment7/` | Exploring Hash Tables and Their Practical Applications — hash function design, collision-resolution strategies, and real-world trade-offs (written discussion) |
-| `residency/` | Course project — e-commerce order platform: six from-scratch data structures (hash table, trie, BST, graph, max-heap, FIFO queue) behind one facade, with a dependency-free web portal, 42 unit tests, benchmarks at 100k products, and Deliverables 1–3 |
+| `residency/` | Course project — e-commerce order platform: six from-scratch data structures (hash table, trie, BST, graph, max-heap, FIFO queue) behind one facade, with a dependency-free web portal, 42 unit tests, benchmarks at 100k products, and all four deliverables |

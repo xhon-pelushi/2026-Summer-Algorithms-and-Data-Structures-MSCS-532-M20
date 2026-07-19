@@ -41,7 +41,8 @@ residency/
 └── deliverables/              # one folder per deliverable
     ├── Deliverable 1/         #   design report
     ├── Deliverable 2/         #   proof-of-concept report
-    └── Deliverable 3/         #   optimization & scaling report
+    ├── Deliverable 3/         #   optimization & scaling report
+    └── Deliverable 4/         #   final report, presentation, script
 ```
 
 ## Running
